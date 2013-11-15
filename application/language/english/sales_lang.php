@@ -1,8 +1,8 @@
 <?php
-$lang['sales_giftcard_number']='Gift Card Number';
-$lang['sales_giftcard']='Gift Card';
-$lang['sales_register']='Sales Register';
-$lang['sales_mode']='Register Mode';
+$lang['sales_giftcard_number']='LunchBox Express Barcode';
+$lang['sales_giftcard']='LunchBox Express Card';
+$lang['sales_register']='Sales Terminal';
+$lang['sales_mode']='Sales Mode';
 $lang['sales_new_item'] = 'New Item';
 $lang['sales_item_name'] = 'Item Name';
 $lang['sales_item_number'] = 'Item #';
@@ -42,7 +42,7 @@ $lang['sales_cash'] = 'Cash';
 $lang['sales_check'] = 'Check';
 $lang['sales_debit'] = 'Debit Card';
 $lang['sales_credit'] = 'Credit Card';
-$lang['sales_giftcard'] = 'Gift Card';
+$lang['sales_giftcard'] = 'LunchBox Express Card';
 $lang['sales_amount_tendered'] = 'Amount Tendered';
 $lang['sales_change_due'] = 'Change Due';
 $lang['sales_payment_not_cover_total'] = 'Payment Amount does not cover Total';

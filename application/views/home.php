@@ -5,6 +5,9 @@
 	<?php
 	foreach($allowed_modules->result() as $module)
 	{
+		if ($module->module_id == 'sales')
+		{
+			header("Location: ".site_url("$module->module_id"));
 	?>
 	<div class="module_item">
 		<a href="<?php echo site_url("$module->module_id");?>">
@@ -13,6 +16,7 @@
 		 - <?php echo $this->lang->line('module_'.$module->module_id.'_desc');?>
 	</div>
 	<?php
+		}
 	}
 	?>
 </div>

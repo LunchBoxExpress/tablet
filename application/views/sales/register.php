@@ -1,4 +1,5 @@
 <?php $this->load->view("partial/header"); ?>
+<link rel="stylesheet" src="css/bootstrap.css"/>
 <div id="page_title" style="margin-bottom:8px;"><?php echo $this->lang->line('sales_register'); ?></div>
 <?php
 if(isset($error))
@@ -16,17 +17,9 @@ if (isset($success))
 	echo "<div class='success_message'>".$success."</div>";
 }
 ?>
+
 <div id="register_wrapper">
-<?php echo form_open("sales/change_mode",array('id'=>'mode_form')); ?>
-	<span><?php echo $this->lang->line('sales_mode') ?></span>
-<?php echo form_dropdown('mode',$modes,$mode,'onchange="$(\'#mode_form\').submit();"'); ?>
-<div id="show_suspended_sales_button">
-	<?php echo anchor("sales/suspended/width:425",
-	"<div class='small_button'><span style='font-size:73%;'>".$this->lang->line('sales_suspended_sales')."</span></div>",
-	array('class'=>'thickbox none','title'=>$this->lang->line('sales_suspended_sales')));
-	?>
-</div>
-</form>
+
 <?php echo form_open("sales/add",array('id'=>'add_item_form')); ?>
 <label id="item_label" for="item">
 
@@ -57,8 +50,8 @@ else
 <th style="width:30%;"><?php echo $this->lang->line('sales_item_number'); ?></th>
 <th style="width:30%;"><?php echo $this->lang->line('sales_item_name'); ?></th>
 <th style="width:11%;"><?php echo $this->lang->line('sales_price'); ?></th>
-<th style="width:11%;"><?php echo $this->lang->line('sales_quantity'); ?></th>
-<th style="width:11%;"><?php echo $this->lang->line('sales_discount'); ?></th>
+<th style="width:22%;"><?php echo $this->lang->line('sales_quantity'); ?></th>
+<th style="width:0%;"><?php //echo $this->lang->line('sales_discount'); ?></th>
 <th style="width:15%;"><?php echo $this->lang->line('sales_total'); ?></th>
 <th style="width:11%;"><?php echo $this->lang->line('sales_edit'); ?></th>
 </tr>
@@ -116,7 +109,7 @@ else
 		?>
 		</td>
 
-		<td><?php echo form_input(array('name'=>'discount','value'=>$item['discount'],'size'=>'3'));?></td>
+		<td><?php //echo form_input(array('name'=>'discount','value'=>$item['discount'],'size'=>'3'));?></td>
 		<td><?php echo to_currency($item['price']*$item['quantity']-$item['price']*$item['quantity']*$item['discount']/100); ?></td>
 		<td><?php echo form_submit("edit_item", $this->lang->line('sales_edit_item'));?></td>
 		</tr>
@@ -186,6 +179,7 @@ else
 	{
 		echo $this->lang->line("sales_customer").': <b>'.$customer. '</b><br />';
 		echo anchor("sales/remove_customer",'['.$this->lang->line('common_remove').' '.$this->lang->line('customers_customer').']');
+		echo "";
 	}
 	else
 	{
