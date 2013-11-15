@@ -1,4 +1,0 @@
-tablet
-======
-
-tablet client
